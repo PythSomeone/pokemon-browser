@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
+import {Paths} from "./models/paths";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokemon-browser';
+
+  constructor(
+    private router: Router,
+  ) {
+  }
+
+  start() {
+    this.router.navigate([Paths.START])
+  }
 }
