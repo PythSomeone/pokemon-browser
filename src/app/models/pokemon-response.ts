@@ -1,20 +1,18 @@
-import { Pokemon } from "./pokemon-list-item";
-
 export class PokemonResponse {
-    count: number;
-    next: string;
-    previous: string;
-    results: Array<Pokemon>;
+  name: string;
+  weight: string;
+  height: string;
+  sprites: Array<string>;
 
-    constructor(
-        count: number,
-        next: string,
-        previous: string,
-        results: Array<Pokemon>,
-    ) {
-        this.count = count;
-        this.next = next;
-        this.previous = previous;
-        this.results = results;
-    }
+  constructor(
+    name: string,
+    weight: string,
+    height: string,
+    sprites: Array<string>,
+  ) {
+    this.name = name;
+    this.weight = weight;
+    this.height = height;
+    this.sprites = sprites;
+  }
 }

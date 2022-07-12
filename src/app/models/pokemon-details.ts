@@ -1,4 +1,4 @@
-export class PokemonListItem {
+export class PokemonDetails {
     name: string;
     url: string;
 

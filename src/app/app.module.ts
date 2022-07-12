@@ -10,26 +10,29 @@ import {PokeapiService} from './services/poke-api-service';
 import {HttpClientModule} from "@angular/common/http";
 import {FlexModule} from "@angular/flex-layout";
 import {FormsModule} from "@angular/forms";
-import {CdkScrollable, CdkVirtualScrollViewport, ScrollingModule} from "@angular/cdk/scrolling";
+import {ScrollingModule} from "@angular/cdk/scrolling";
+import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainListComponent
+    MainListComponent,
+    PokemonDetailsComponent
   ],
-    imports: [
-        BrowserModule,
-        MaterialModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        FlexModule,
-        FormsModule,
-        ScrollingModule,
-    ],
+  imports: [
+    BrowserModule,
+    MaterialModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FlexModule,
+    FormsModule,
+    ScrollingModule,
+  ],
   providers: [
     PokeapiService,
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
