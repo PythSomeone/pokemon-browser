@@ -1,0 +1,9 @@
+<div fxLayoutGap="10" fxFlexFill fxLayout="column" fxLayoutAlign="start center" >
+ <cdk-virtual-scroll-viewport itemSize="50">
+<div *cdkVirtualFor="let item of pokemons">
+    <mat-card fxFlexAlign="center">
+      {{item.name}}
+    </mat-card>
+</div>
+ </cdk-virtual-scroll-viewport>
+</div>

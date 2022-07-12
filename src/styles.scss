@@ -1,0 +1,64 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$pokemon-browser-primary: mat.define-palette(mat.$cyan-palette);
+$pokemon-browser-accent: mat.define-palette(mat.$teal-palette);
+$pokemon-browser-warn: mat.define-palette(mat.$deep-orange-palette);
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $pokemon-browser-primary,
+    accent: $pokemon-browser-accent,
+    warn: $pokemon-browser-warn,
+  )
+));
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $pokemon-browser-primary,
+    accent: $pokemon-browser-accent,
+    warn: $pokemon-browser-warn,
+  )
+));
+
+@media (prefers-color-scheme: dark) {
+  @include mat.all-component-themes($dark-theme)
+}
+
+@media (prefers-color-scheme: light) {
+  @include mat.all-component-themes($light-theme)
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.manager-image{
+  max-width: 75%;
+  max-height: 500px;
+}
+
+.image{
+  max-width: 90%;
+  max-height: 800px;
+}
+
+.grade{
+  height: 25px;
+  width: 25px;
+}
+
+.logo{
+  height: 50px;
+  width: 50px;
+  border-radius: 20px;
+}
