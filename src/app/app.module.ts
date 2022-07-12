@@ -10,7 +10,7 @@ import {PokeapiService} from './services/poke-api-service';
 import {HttpClientModule} from "@angular/common/http";
 import {FlexModule} from "@angular/flex-layout";
 import {FormsModule} from "@angular/forms";
-import {ScrollingModule} from "@angular/cdk/scrolling";
+import {CdkScrollable, CdkVirtualScrollViewport, ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [

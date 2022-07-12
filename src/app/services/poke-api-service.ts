@@ -21,15 +21,13 @@ export class PokeapiService {
   ) {
   }
 
-  async getPokemon(): Promise<Pokemon[]> {
-    let pokemonResponse : PokemonResponse = new PokemonResponse(0,"","",[new Pokemon("","")]);
-    await this.http.get(this.API_URL + Endpoints.Pokemon, {headers: this.headers}).subscribe(
-      async response => {
-        pokemonResponse = response as PokemonResponse
+  async getPokemon(): Promise<Subscription> {
+    return this.http.get(this.API_URL + Endpoints.Pokemon, {headers: this.headers}).subscribe(
+      response => {
+        const pokemonResponse = response as PokemonResponse
         this.setPokemon(pokemonResponse.results as Pokemon[])
       }
     )
-    return pokemonResponse.results
   }
 
   setPokemon(pokemons: Pokemon[]) {

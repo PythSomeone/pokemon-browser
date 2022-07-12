@@ -20,6 +20,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
+import {CdkVirtualScrollViewport} from "@angular/cdk/scrolling";
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { MatMenuModule } from '@angular/material/menu';
         MatSlideToggleModule,
         MatProgressBarModule,
         MatExpansionModule,
-        MatMenuModule
+        MatMenuModule,
     ]
 })
 export class MaterialModule { }
