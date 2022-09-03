@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {PokeapiService} from '../services/poke-api-service';
 import {Router} from "@angular/router";
-import {PokemonListItem} from "../models/pokemon-list-item";
+import {Paths} from "../models/paths";
+import {BaseModel} from "../models/base_model";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {PokemonListItem} from "../models/pokemon-list-item";
 })
 export class MainListComponent implements OnInit {
 
-  pokemons: PokemonListItem[] = []
+  pokemons: BaseModel[] = []
   private _url: string = "";
 
   constructor(
@@ -32,14 +33,13 @@ export class MainListComponent implements OnInit {
   }
 
   appendPokemons() {
-    let pokemon = new PokemonListItem("", "")
+    let pokemon = new BaseModel()
     this.pokemons = [...this.pokemons, pokemon]
   }
 
   showPokemon(url: string) {
     this._url = url;
-    this.pokeapiService.getPokemon(this._url)
     localStorage.setItem("pokemonUrl", this._url)
-    this.router.navigate(['pokemon'])
+    this.router.navigate([Paths.POKEMON])
   }
 }

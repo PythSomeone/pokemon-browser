@@ -6,49 +6,66 @@
   }
 
   .example-item {
-    height: 200px;
+    height: 80px;
   }
 
   .example-card {
-    width: 600px;
+    width: 300px;
   }
+
+  .center-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  mat-card-title {
+    text-align: center;
+    display: flex;
+  }
+
+  mat-card {
+    margin: 10px;
+
+  }
+
+
+
 
 </style>
 
 <button mat-button (click)="appendPokemons()">CREATE</button>
 <cdk-virtual-scroll-viewport appendOnly itemSize="10" class="example-viewport">
   <div *cdkVirtualFor="let item of pokemons" class="example-item" fxLayoutAlign="center">
-         <mat-card class="example-card">
-           <mat-card-header>
-             <mat-card-title>{{item.name}}</mat-card-title>
-             <button mat-button (click)="showPokemon(item.url)">Click to check the details</button>
-           </mat-card-header>
-         </mat-card>
+    <mat-card class="example-card center-title">
+      <mat-card-header>
+        <mat-card-title fxFlexFill (click)="showPokemon(item.url)" >{{item.name}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
 
   </div>
 </cdk-virtual-scroll-viewport>
 
-<div fxLayoutGap="10" fxFlexFill fxLayout="column" fxLayoutAlign="start center" >
-<!--   <div *ngFor="let item of pokemons">-->
-<!--     <mat-card-title  mat-raised-button color="primary" >{{item.name}}</mat-card-title>-->
-<!--     <mat-card class="example-card">-->
-<!--       <mat-card-header>-->
-<!--         <div mat-card-avatar class="example-header-image"></div>-->
-<!--         <mat-card-title>Shiba Inu</mat-card-title>-->
-<!--         <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
-<!--       </mat-card-header>-->
-<!--       <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
-<!--       <mat-card-content>-->
-<!--         <p>-->
-<!--           The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
-<!--           A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
-<!--           bred for hunting.-->
-<!--         </p>-->
-<!--       </mat-card-content>-->
-<!--       <mat-card-actions>-->
-<!--         <button mat-button>LIKE</button>-->
-<!--         <button mat-button>SHARE</button>-->
-<!--       </mat-card-actions>-->
-<!--     </mat-card>-->
-<!--   </div>-->
+<div fxLayoutGap="10" fxFlexFill fxLayout="column" fxLayoutAlign="start center">
+  <!--   <div *ngFor="let item of pokemons">-->
+  <!--     <mat-card-title  mat-raised-button color="primary" >{{item.name}}</mat-card-title>-->
+  <!--     <mat-card class="example-card">-->
+  <!--       <mat-card-header>-->
+  <!--         <div mat-card-avatar class="example-header-image"></div>-->
+  <!--         <mat-card-title>Shiba Inu</mat-card-title>-->
+  <!--         <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+  <!--       </mat-card-header>-->
+  <!--       <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+  <!--       <mat-card-content>-->
+  <!--         <p>-->
+  <!--           The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
+  <!--           A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
+  <!--           bred for hunting.-->
+  <!--         </p>-->
+  <!--       </mat-card-content>-->
+  <!--       <mat-card-actions>-->
+  <!--         <button mat-button>LIKE</button>-->
+  <!--         <button mat-button>SHARE</button>-->
+  <!--       </mat-card-actions>-->
+  <!--     </mat-card>-->
+  <!--   </div>-->
 </div>

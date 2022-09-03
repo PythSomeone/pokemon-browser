@@ -1,7 +1,9 @@
 export class PokemonImage {
-  front_default: string;
+  front_default: string = "";
 
-    constructor(front_default: string) {
-        this.front_default = front_default;
-    }
+  constructor(
+    front_default: string = ""
+  ) {
+    this.front_default = front_default;
+  }
 }

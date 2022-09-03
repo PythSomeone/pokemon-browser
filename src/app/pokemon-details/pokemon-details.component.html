@@ -1,34 +1,40 @@
-<style>
-  .example-viewport {
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-  }
+<div fxLayoutAlign="center" layout-padding layout-margin layout-fill style="min-height: 224px;">
 
-  .example-card {
-    width: 400px;
-  }
-
-</style>
-
-<cdk-virtual-scroll-viewport appendOnly itemSize="10" class="example-viewport" fxLayoutAlign="center">
-  <div fxLayoutAlign="center">
   <mat-card class="example-card">
+
     <mat-card-header>
       <mat-card-title>{{pokemon.name}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image [src]="pokemon.sprites.front_default" alt="Photo of a pokemon">
-    <mat-card-actions>
-      <p>
-        Height:{{pokemon.height}}
-        <br>
-        Weight:{{pokemon.weight}}
-      </p>
-    </mat-card-actions>
-  </mat-card>
-  </div>
+    <div [ngStyle]="{height: '400px'}">
+      <img mat-card-image [src]="pokemon.sprites.front_default">
+    </div>
+    <mat-card-header class="statistic-category-header" fxLayoutAlign="center center">
+      <mat-card-title>Physical</mat-card-title>
+    </mat-card-header>
 
-</cdk-virtual-scroll-viewport>
+    <hr>
+
+    <div fxLayoutAlign="space-evenly center">
+      <button mat-flat-button color="accent" disableRipple>Height : {{pokemon.height}}</button>
+      <button mat-flat-button color="accent" disableRipple>Weight : {{pokemon.weight}}</button>
+    </div>
+
+    <mat-card-header class="statistic-category-header" fxLayoutAlign="center center">
+      <mat-card-title>Abilities</mat-card-title>
+    </mat-card-header>
+
+    <hr>
+
+    <div fxLayoutAlign="space-evenly center">
+      <div *ngFor="let ability of pokemon.abilities" layout="row" layout-sm="column">
+        <button mat-flat-button color="warn" disableRipple>{{ability.ability.name}}</button>
+      </div>
+    </div>
+
+  </mat-card>
+
+</div>
+
 
 <div fxLayoutGap="10" fxFlexFill fxLayout="column" fxLayoutAlign="start center">
   <!--   <div *ngFor="let item of pokemons">-->

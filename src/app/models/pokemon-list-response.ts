@@ -1,16 +1,16 @@
-import { PokemonListItem } from "./pokemon-list-item";
+import { BaseModel } from "./base_model";
 
 export class PokemonListResponse {
     count: number;
     next: string;
     previous: string;
-    results: Array<PokemonListItem>;
+    results: Array<BaseModel>;
 
     constructor(
         count: number,
         next: string,
         previous: string,
-        results: Array<PokemonListItem>,
+        results: Array<BaseModel>,
     ) {
         this.count = count;
         this.next = next;
