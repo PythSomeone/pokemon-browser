@@ -1,10 +1,10 @@
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Observable, Subject, Subscription} from "rxjs";
-import {Endpoints} from "../../../../src/app/models/endpoints";
 import {PokemonListResponse} from "../models/pokemon-list-response";
 import {BaseModel} from "../models/base_model";
 import {PokemonResponse} from "../models/pokemon-response";
+import {Endpoints} from "../models/endpoints";
 
 
 @Injectable({providedIn: 'root'})

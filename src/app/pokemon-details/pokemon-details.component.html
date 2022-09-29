@@ -6,7 +6,7 @@
       <mat-card-title>{{pokemon.name}}</mat-card-title>
     </mat-card-header>
     <div [ngStyle]="{height: '400px'}">
-      <img mat-card-image [src]="pokemon.sprites.front_default">
+      <img mat-card-image [src]="pokemon.sprites.front_default" alt="pokemon image">
     </div>
     <mat-card-header class="statistic-category-header" fxLayoutAlign="center center">
       <mat-card-title>Physical</mat-card-title>
@@ -26,7 +26,7 @@
     <hr>
 
     <div fxLayoutAlign="space-evenly center">
-      <div *ngFor="let ability of pokemon.abilities" layout="row" layout-sm="column">
+      <div *ngFor="let ability of pokemon.abilities">
         <button mat-flat-button color="warn" disableRipple>{{ability.ability.name}}</button>
       </div>
     </div>
@@ -35,28 +35,3 @@
 
 </div>
 
-
-<div fxLayoutGap="10" fxFlexFill fxLayout="column" fxLayoutAlign="start center">
-  <!--   <div *ngFor="let item of pokemons">-->
-  <!--     <mat-card-title  mat-raised-button color="primary" >{{item.name}}</mat-card-title>-->
-  <!--     <mat-card class="example-card">-->
-  <!--       <mat-card-header>-->
-  <!--         <div mat-card-avatar class="example-header-image"></div>-->
-  <!--         <mat-card-title>Shiba Inu</mat-card-title>-->
-  <!--         <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
-  <!--       </mat-card-header>-->
-  <!--       <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
-  <!--       <mat-card-content>-->
-  <!--         <p>-->
-  <!--           The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
-  <!--           A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
-  <!--           bred for hunting.-->
-  <!--         </p>-->
-  <!--       </mat-card-content>-->
-  <!--       <mat-card-actions>-->
-  <!--         <button mat-button>LIKE</button>-->
-  <!--         <button mat-button>SHARE</button>-->
-  <!--       </mat-card-actions>-->
-  <!--     </mat-card>-->
-  <!--   </div>-->
-</div>
