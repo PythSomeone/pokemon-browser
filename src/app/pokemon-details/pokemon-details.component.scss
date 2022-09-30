@@ -1,9 +1,13 @@
-.example-card {
+@use '@angular/material' as mat;
+
+$my-palette: mat.define-palette(mat.$indigo-palette);
+
+.pokemon-card {
   width: 400px;
 }
 
 mat-grid-tile {
-  background: darkorange;
+  background: var(--theme-background);
   border-radius: 20px;
 }
 

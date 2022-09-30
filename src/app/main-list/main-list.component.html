@@ -2,7 +2,7 @@
 <button mat-button (click)="appendPokemons()">CREATE</button>
 <cdk-virtual-scroll-viewport appendOnly itemSize="10" class="example-viewport">
   <div *cdkVirtualFor="let item of pokemons" class="example-item" fxLayoutAlign="center">
-    <mat-card class="example-card center-title">
+    <mat-card class="example-card center-title pokemon-card">
       <mat-card-header>
         <mat-card-title fxFlexFill (click)="showPokemon(item.url)" >{{item.name}}</mat-card-title>
       </mat-card-header>

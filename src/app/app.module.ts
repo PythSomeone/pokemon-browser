@@ -12,12 +12,13 @@ import {FlexModule} from "@angular/flex-layout";
 import {FormsModule} from "@angular/forms";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
+import {ColorSchemeService} from "./services/color-scheme.service";
 
 @NgModule({
-  declarations: [
+  declarations:[
     AppComponent,
     MainListComponent,
-    PokemonDetailsComponent
+    PokemonDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +32,7 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
   ],
   providers: [
     PokeapiService,
+    ColorSchemeService,
   ],
   bootstrap: [AppComponent]
 })
