@@ -13,12 +13,14 @@ import {FormsModule} from "@angular/forms";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import {ColorSchemeService} from "./services/color-scheme.service";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations:[
     AppComponent,
     MainListComponent,
     PokemonDetailsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
